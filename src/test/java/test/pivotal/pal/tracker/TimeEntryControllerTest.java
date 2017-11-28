@@ -1,8 +1,8 @@
 package test.pivotal.pal.tracker;
 
-import io.pivotal.pal.tracker.TimeEntry;
-import io.pivotal.pal.tracker.TimeEntryController;
-import io.pivotal.pal.tracker.TimeEntryRepository;
+import io.pivotal.pal.tracker.controller.TimeEntryController;
+import io.pivotal.pal.tracker.model.TimeEntry;
+import io.pivotal.pal.tracker.repository.TimeEntryRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.HttpStatus;
@@ -18,6 +18,7 @@ import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.*;
 
 public class TimeEntryControllerTest {
+
     private TimeEntryRepository timeEntryRepository;
     private TimeEntryController controller;
 

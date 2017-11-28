@@ -1,4 +1,4 @@
-package io.pivotal.pal.tracker.data;
+package io.pivotal.pal.tracker.model;
 
 import java.time.LocalDate;
 
@@ -67,7 +67,7 @@ public class TimeEntry {
     public void setHours(int hours) {
         this.hours = hours;
     }
-    
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
