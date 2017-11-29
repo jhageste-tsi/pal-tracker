@@ -1,7 +1,4 @@
-package io.pivotal.pal.tracker.repository.impl;
-
-import io.pivotal.pal.tracker.model.TimeEntry;
-import io.pivotal.pal.tracker.repository.TimeEntryRepository;
+package io.pivotal.pal.tracker;
 
 import java.util.ArrayList;
 import java.util.HashMap;
