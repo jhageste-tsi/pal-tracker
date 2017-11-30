@@ -4,9 +4,7 @@ import com.jayway.jsonpath.DocumentContext;
 import io.pivotal.pal.tracker.PalTrackerApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -17,14 +15,11 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = PalTrackerApplication.class, webEnvironment = RANDOM_PORT)
-public class HealthApiTest {
-
-    @Autowired
-    private TestRestTemplate restTemplate;
+public class HealthApiTest extends ApiTest {
 
     @Test
     public void healthTest() {
-        ResponseEntity<String> response = this.restTemplate.getForEntity("/health", String.class);
+        ResponseEntity<String> response = authorizedRestTemplate.getForEntity("/health", String.class);
 
 
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
